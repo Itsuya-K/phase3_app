@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :edit_confirm, :update, :destroy]
+  before_action :login_limit, only: [:new, :edit, :show, :destroy]
+  before_action :set_limit, only: [:edit, :destroy]
 
   def index
     @blogs = Blog.all.reverse_order
@@ -15,12 +17,15 @@ class BlogsController < ApplicationController
 
   def confirm
     @blog = Blog.new(blog_params)
+    @blog.user_id = current_user.id
     render :new if @blog.invalid?
   end
 
   def create
     @blog = Blog.new(blog_params)
+    @blog.user_id = current_user.id
     if @blog.save
+      ContactMailer.inform_mail(@blog).deliver
       # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
       redirect_to blogs_path, notice: "ブログを作成しました！"
     else
@@ -30,6 +35,7 @@ class BlogsController < ApplicationController
   end
 
   def show
+    @favorite = current_user.favorites.find_by(blog_id: @blog.id)
   end
 
   def edit
@@ -55,10 +61,22 @@ class BlogsController < ApplicationController
 
   private
   def blog_params
-    params.require(:blog).permit(:title, :content)
+    params.require(:blog).permit(:title, :content, :user_id, :image, :image_cache)
   end
 
   def set_blog
     @blog = Blog.find(params[:id])
+  end
+
+  def set_limit
+    unless current_user.id == @blog.user_id then
+      redirect_to blogs_path, notice:"あなたはこのツイートを編集できません！"
+    end
+  end
+
+  def login_limit
+    if logged_in? == false
+      redirect_to new_session_path, notice:"ログインしてください！"
+    end
   end
 end
