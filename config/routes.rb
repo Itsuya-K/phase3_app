@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
   resources :contacts, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
+  resources :favorites, only: [:create, :destroy]
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
