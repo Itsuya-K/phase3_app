@@ -1,6 +1,32 @@
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+nav a {
+   color: #000;
+
+   &:visited {
+     color: #666;
+   }
+
+   &:hover {
+     color: #fff;
+     background-color: #000;
+   }
+ }
+
+.title {
+  color: #ffffff;
+  background: #000000;
+  border-radius: 0.5em;
+  display: inline-block;
+  padding: 12px 25px;
+ }
+
+.blog {
+   background-color: white;
+   margin: 20px;
+   padding: 10px;
+ }
 
 .image {
   height:300px;
@@ -9,4 +35,34 @@
   object-position: 50% 50%;
   // object-fit: contain;
   // background-color: black;
+}
+
+.blog .image {
+  float: left;
+}
+
+.content {
+  margin-left:50px;
+  float: left;
+  font-size: 1.5rem;
+  min-width: 200px;
+}
+
+.under {
+  border-bottom: solid 1px darkgray;
+}
+
+.text {
+  min-height: 180px;
+}
+
+.bottuns {
+  text-align: center;
+  // margin: 0 auto;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
 }

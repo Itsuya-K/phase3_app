@@ -1,3 +1,6 @@
+<h2 class="title">ブログ<%= title %></h2>
+
+<div class="container2">
 <%= form_with(model: @blog, url: choose_new_or_edit, local: true) do |form| %>
   <% if @blog.errors.any? %>
     <div id="error_explanation">
@@ -11,6 +14,13 @@
   <% end %>
 
   <div class="blog_title">
+    <%= form.label :image %>
+    <!-- 確認画面から新規作成画面に戻った時に、 -->
+    <!-- アップロードした画像を表示させるための記述 -->
+    <%= image_tag @blog.image.url, class: 'image' if @blog.image.url %>
+    <%= form.file_field :image %>
+  </div>
+  <div class="blog_title">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
@@ -18,14 +28,6 @@
     <%= form.label :content %>
     <%= form.text_area :content %>
   </div>
-  <div class="blog_title">
-    <%= form.label :image %>
-    <!-- 確認画面から新規作成画面に戻った時に、 -->
-    <!-- アップロードした画像を表示させるための記述 -->
-    <%= image_tag(@blog.image.url) if @blog.image.url %>
-    <%= form.file_field :image %>
-  </div>
   <%= form.submit %>
 <% end %>
-
-<%= link_to "ブログ一覧画面にもどる", blogs_path %>
+</div>

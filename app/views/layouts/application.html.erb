@@ -10,23 +10,29 @@
 
   <body>
     <header>
-      <ul>
-        <li><%= link_to 'ブログ一覧', blogs_path %></li>
-        <li><%= link_to 'お問合せ', new_contact_path %></li>
-        <% if logged_in? %>
-          <li><%= link_to "Profile", user_path(current_user.id) %></li>
-          <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
-        <% else %>
-          <li><%= link_to "Sign up", new_user_path %></li>
-          <li><%= link_to "Login", new_session_path %></li>
-        <% end %>
-      </ul>
+      <h1>Instagram Clone</h1>
+      <nav>
+        <ul>
+          <li><%= link_to 'ブログ一覧', blogs_path %></li>
+          <li><%= link_to 'ブログ投稿', new_blog_path %></li>
+          <% if logged_in? %>
+            <li><%= link_to "Profile", user_path(current_user.id) %></li>
+            <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign up", new_user_path %></li>
+            <li><%= link_to "Login", new_session_path %></li>
+          <% end %>
+          <li><%= link_to 'お問合せ', new_contact_path %></li>
+        </ul>
+      </nav>
     </header>
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
+    <div class="container">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+      <% end %>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
 
     <footer>
       <p>課題作成中</p>
