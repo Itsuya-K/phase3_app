@@ -1,8 +1,8 @@
-<h1>ブログ詳細画面</h1>
+<h2 class="title">ブログ詳細画面</h2>
 <p>タイトル: <%= @blog.title %></p>
 <p>内容: <%= @blog.content %></p>
-<% if @blog.image %>
-  <%= image_tag @blog.image.url %>
+<% if @blog.image.url %>
+  <%= image_tag @blog.image.url, class: 'image' %>
 <% end %>
 
 <% unless @blog.user_id == current_user.id %>
@@ -13,4 +13,4 @@
   <% end %>
 <% end %>
 
-<%= link_to 'ブログ一覧画面にもどる', blogs_path %>
+<%= link_to "ブログ一覧", blogs_path, class: 'btn btn-default' %>

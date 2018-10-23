@@ -43,7 +43,6 @@ class BlogsController < ApplicationController
 
   def edit_confirm
     @blog.title, @blog.content = blog_params[:title], blog_params[:content]
-    binding.pry
   end
 
   def update
