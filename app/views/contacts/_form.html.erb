@@ -1,31 +1,33 @@
-<%= form_with(model: @contact, local: true) do |form| %>
-  <% if @contact.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-      <ul>
-      <% @contact.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="show_content">
+  <%= form_with(model: @contact, local: true) do |form| %>
+    <% if @contact.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+        <ul>
+        <% @contact.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <p><%= form.label :name %></p>
+      <%= form.text_field :name, id: :contact_name %>
+    </div>
+
+    <div class="field">
+      <p><%= form.label :email %></p>
+      <%= form.text_field :email, id: :contact_email %>
+    </div>
+
+    <div class="field">
+      <p><%= form.label :content %></p>
+      <%= form.text_area :content, id: :contact_content %>
+    </div>
+
+    <div class="actions">
+      <p><%= form.submit %></p>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :contact_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :contact_email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content, id: :contact_content %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

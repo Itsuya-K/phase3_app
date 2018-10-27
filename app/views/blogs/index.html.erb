@@ -1,14 +1,16 @@
 <h2 class="title">ブログ一覧</h2>
 
 <% @blogs.each do |blog| %>
-  <div class="blog clearfix">
-    <p>#<%= blog.id %></p>
-    <% if blog.image.url %>
-      <%= image_tag blog.image.url, class: 'image' %>
-    <% end %>
-    <div class="content">
+  <ul class="row blog clearfix">
+    <li class="col-md-4">
+      <p>#<%= blog.id %></p>
+      <% if blog.image.url %>
+        <%= image_tag blog.image.url, class: 'image' %>
+      <% end %>
+    </li>
+    <li class="content col-md col-md-8 text_left">
       <p class="under">投稿者:<%= blog.user.name %></p>
-      <h4><b><%= blog.title %></b></h4>
+      <h4 class="margin"><b><%= blog.title %></b></h4>
       <p class="text"><%= blog.content %></p>
       <div class="bottuns">
         <%= link_to '詳細', blog_path(blog.id), class: 'btn btn-default' %>
@@ -19,6 +21,6 @@
           <% end %>
         <% end %>
       </div>
-    </div>
-  </div>
+    </li>
+  </ul>
 <% end %>

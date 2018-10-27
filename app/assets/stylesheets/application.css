@@ -59,9 +59,12 @@
    height: 50px;
  }
 
+ ul {
+   list-style: none;
+ }
+
  header ul {
    margin: 0 auto;
-   list-style: none;
  }
 
  header ul a {
@@ -94,10 +97,23 @@ footer {
     min-height: 500px;
 }
 
+.show_content {
+  margin: auto;
+  max-width: 500px;
+}
+
+.show_content p {
+  margin-top: 30px;
+}
+
 table {
   margin: 20px;
 }
 
 td {
   padding: 10px;
+}
+
+.margin {
+  margin: 15px 0;
 }

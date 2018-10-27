@@ -1,6 +1,6 @@
 <h2 class="title">ブログ<%= title %></h2>
 
-<div class="container2">
+<div class="show_content">
 <%= form_with(model: @blog, url: choose_new_or_edit, local: true) do |form| %>
   <% if @blog.errors.any? %>
     <div id="error_explanation">
@@ -14,20 +14,20 @@
   <% end %>
 
   <div class="blog_title">
-    <%= form.label :image %>
+    <p><%= form.label :image %></p>
     <!-- 確認画面から新規作成画面に戻った時に、 -->
     <!-- アップロードした画像を表示させるための記述 -->
     <%= image_tag @blog.image.url, class: 'image' if @blog.image.url %>
     <%= form.file_field :image %>
   </div>
   <div class="blog_title">
-    <%= form.label :title %>
+    <p><%= form.label :title %></p>
     <%= form.text_field :title %>
   </div>
   <div class="blog_title">
-    <%= form.label :content %>
+    <p><%= form.label :content %></p>
     <%= form.text_area :content %>
   </div>
-  <%= form.submit %>
+  <p><%= form.submit %></p>
 <% end %>
 </div>

@@ -1,20 +1,24 @@
 <h2 class="title"><%= title %>確認画面</h2>
-<h3>以下の内容で、送信する。</h3>
+<div class="show_content">
+  <h3>以下の内容で、送信する。</h3>
 
-<%= form_with(model: @blog, url: url, local: true) do |form| %>
-  <%= form.hidden_field :title %>
-  <%= form.hidden_field :content %>
+  <%= form_with(model: @blog, url: url, local: true) do |form| %>
+    <%= form.hidden_field :title %>
+    <%= form.hidden_field :content %>
 
-  <p>タイトル:<%= @blog.title %></p>
-  <p>本文:<%= @blog.content %></p>
-  <%= image_tag @blog.image.url, class: 'image' %>
-  <%= form.hidden_field :image_cache %>
-  <%= form.submit  "登録する" %>
-<% end %>
+    <p>タイトル:<%= @blog.title %></p>
+    <p>本文:<%= @blog.content %></p>
+    <%= image_tag @blog.image.url, class: 'image' %>
+    <%= form.hidden_field :image_cache %><br>
+    <div class="margin">
+      <%= form.submit  "登録する" %>
+    </div>
+  <% end %>
 
-<%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
-  <%= form.hidden_field :title %>
-  <%= form.hidden_field :content %>
-  <%= form.hidden_field :image_cache %>
-  <%= form.submit "もどる", name: 'back' %>
-<% end %>
+  <%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
+    <%= form.hidden_field :title %>
+    <%= form.hidden_field :content %>
+    <%= form.hidden_field :image_cache %>
+    <p><%= form.submit "もどる", name: 'back' %></p>
+  <% end %>
+</div>
