@@ -26,6 +26,8 @@ nav a {
    background-color: white;
    margin: 20px;
    padding: 20px;
+   border-radius: 5px;
+   border: solid 1px lightgray;
  }
 
 .image {
@@ -53,6 +55,7 @@ nav a {
   border-bottom: solid 1px darkgray;
 }
 
+// 投稿一覧の内容部分
 .text {
   min-height: 250px;
 }

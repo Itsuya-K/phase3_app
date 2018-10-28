@@ -26,7 +26,7 @@
  }
 
  header h1 {
-   width: 60rem;
+   width: 45rem;
    font-size:6rem;
    font-weight:bold;
    position: relative;
@@ -49,6 +49,21 @@
  }
  header h1:before {left: 7px;}
  header h1:after {right: 7px;}
+
+ .name {
+   font-size: 1.8rem;
+   margin: 10px;
+ }
+
+ .icon {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 50%;
+    margin: 15px;
+    box-shadow: 0 0 5px;
+ }
 
  .bottuns {
    text-align: center;
@@ -90,16 +105,37 @@ footer {
   bottom: 0; */
 }
 
+footer a {
+  color: white;
+  font-weight: bold;
+}
+
+.background {
+  background: url(maple-birdseye.jpg);
+}
+
 .container {
-    margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    min-height: 500px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  min-height: 500px;
+}
+
+h3 {
+  background-color: gray;
+  color: white;
+  border: solid 1.5px lightgray;
+  padding: 10px;
+  margin: 10px
 }
 
 .show_content {
-  margin: auto;
-  max-width: 500px;
+  margin: 50px auto;
+  max-width: 650px;
+  background-color: white;
+  padding: 20px 0px 50px 150px;
+  box-shadow: 0 0 10px  inset;
+  border-radius: 5px;
 }
 
 .show_content p {
@@ -116,4 +152,51 @@ td {
 
 .margin {
   margin: 15px 0;
+}
+
+.center {
+  text-align: center;
+}
+
+/* プロフィール中お気に入りの内容部分 */
+.scr {
+  max-height: 300px;
+  overflow: scroll;
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px -7px 0;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+label {
+  display: block;
 }

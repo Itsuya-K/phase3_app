@@ -1,25 +1,51 @@
 <h2 class="title"><%= @user.name %>のページ</h2>
 
 <div class="show_content">
-  <p><b>名前</b>:<br> <%= @user.name %></p>
-  <p><b>メールアドレス</b>:<br> <%= @user.email %></p>
-
-  <% if @user.image %>
-    <p><b>アイコン画像</b></p>
-    <%= image_tag @user.image.url, class: 'image' %>
-  <% end %>
-
-  <p><b>お気に入り</b></p>
-  <% @favorites_blogs.each do |blog| %>
-    <div class=" panel panel-default">
-      <div class="panel-heading">
-        <%= blog.title %>
-      </div>
-      <div class="panel-body">
-        <%= blog.content %></div>
-      <div class="bottuns">
-        <%= link_to '詳細', blog_path(blog.id), class: 'btn btn-default margin' %>
-      </div>
-    </div>
-  <% end %>
+  <p>
+    <b class="under">アイコン画像</b><br>
+      <% if @user.image %>
+        <%= image_tag @user.image.url, class: 'icon' %>
+      <% else %>
+        <%= image_tag 'twitterclone_icon.png', class: "icon" %>
+      <% end %>
+  </p>
+  <p><b class="under">名前</b><br><%= @user.name %></p>
+  <p><b class="under">メールアドレス</b><br><%= @user.email %></p>
 </div>
+
+<h3 class="center margin"><b>「いいね」した投稿</b></h3>
+<% @favorites_blogs.each_with_index do |blog, i| %>
+  <% if i % 5 == 0 %>
+    <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-success">
+  <% elsif i % 5 == 1 %>
+    <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-warning">
+  <% elsif i % 5 == 2 %>
+    <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-info">
+  <% elsif i % 5 == 3 %>
+    <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-danger">
+  <% else %>
+    <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-default">
+  <% end %>
+    <p class="under name">
+      <% if blog.image.url %>
+        <%= image_tag blog.image.url, class: "icon" %>
+      <% else %>
+        <%= image_tag 'twitterclone_icon.png', class: "icon" %>
+      <% end %>
+      <%= blog.user.name %>
+    </p>
+    <p class="margin center">
+      <strong><%= blog.title %></strong>
+    </p>
+    <div class="scr panel-heading">
+      <% if blog.image.url %>
+        <p class="center"><%= image_tag blog.image.url, class: "image" %></p>
+      <% end %>
+      <%= blog.content %>
+    </div>
+
+    <div class="bottuns">
+      <%= link_to '詳細', blog_path(blog.id), class: 'btn btn-default margin' %>
+    </div>
+  </div>
+<% end %>

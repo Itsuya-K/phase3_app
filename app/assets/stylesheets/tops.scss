@@ -1,6 +1,11 @@
 // Place all the styles related to the tops controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.background {
+  background: url(maple-birdseye.jpg);
+  background-size: cover;
+}
+
 .top {
   // height: 100%;
   // width: 100%;
@@ -9,13 +14,14 @@
 }
 
 .top_title{
-  width: 100rem;
+  width: 70rem;
   font-size:10rem;
   font-weight:bold;
   position: relative;
   padding: 0.5em 1em;
   border-top: solid 2px black;
   border-bottom: solid 2px black;
+  text-align: center;
   margin: 0 auto;
 }
 .top_title:before, .top_title:after{

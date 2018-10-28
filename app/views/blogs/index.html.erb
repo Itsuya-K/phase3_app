@@ -1,26 +1,38 @@
-<h2 class="title">ブログ一覧</h2>
-
-<% @blogs.each do |blog| %>
-  <ul class="row blog clearfix">
-    <li class="col-md-4">
-      <p>#<%= blog.id %></p>
+<h2 class="title">タイムライン</h2><br>
+<div class="margin">
+<% @blogs.each_with_index do |blog, i| %>
+  <% if i % 5 == 0 %>
+    <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-success">
+  <% elsif i % 5 == 1 %>
+    <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-warning">
+  <% elsif i % 5 == 2 %>
+    <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-info">
+  <% elsif i % 5 == 3 %>
+    <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-danger">
+  <% else %>
+    <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-default">
+  <% end %>
+    <p class="under name">
       <% if blog.image.url %>
-        <%= image_tag blog.image.url, class: 'image' %>
+        <%= image_tag blog.image.url, class: "icon" %>
+      <% else %>
+        <%= image_tag 'twitterclone_icon.png', class: "icon" %>
       <% end %>
-    </li>
-    <li class="content col-md col-md-8 text_left">
-      <p class="under">投稿者:<%= blog.user.name %></p>
-      <h4 class="margin"><b><%= blog.title %></b></h4>
-      <p class="text"><%= blog.content %></p>
-      <div class="bottuns">
-        <%= link_to '詳細', blog_path(blog.id), class: 'btn btn-default' %>
-        <% if logged_in? %>
-          <% if blog.user_id == current_user.id %>
-            <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default' %>
-            <%= link_to '削除', blog_path(blog.id), class: 'btn btn-default', method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
-          <% end %>
-        <% end %>
-      </div>
-    </li>
-  </ul>
+      <%= blog.user.name %>
+    </p>
+    <p class="margin center">
+      <strong><%= blog.title %></strong>
+    </p>
+    <div class="scr panel-heading">
+      <% if blog.image.url %>
+        <p class="center"><%= image_tag blog.image.url, class: "image" %></p>
+      <% end %>
+      <%= blog.content %>
+    </div>
+
+    <div class="bottuns">
+      <%= link_to '詳細', blog_path(blog.id), class: 'btn btn-default margin' %>
+    </div>
+  </div>
 <% end %>
+</div>

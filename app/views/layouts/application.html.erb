@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Instagram Clone</title>
+    <title>Friencher</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,11 +10,11 @@
 
   <body>
     <header>
-      <h1>Instagram Clone</h1>
+      <h1>Friencher</h1>
       <nav>
         <ul>
-          <li><%= link_to 'ブログ一覧', blogs_path %></li>
-          <li><%= link_to 'ブログ投稿', new_blog_path %></li>
+          <li><%= link_to 'タイムライン', blogs_path %></li>
+          <li><%= link_to '投稿', new_blog_path %></li>
           <% if logged_in? %>
             <li><%= link_to "Profile", user_path(current_user.id) %></li>
             <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
@@ -22,7 +22,6 @@
             <li><%= link_to "Sign up", new_user_path %></li>
             <li><%= link_to "Login", new_session_path %></li>
           <% end %>
-          <li><%= link_to 'お問合せ', new_contact_path %></li>
         </ul>
       </nav>
     </header>
@@ -35,8 +34,8 @@
     </div>
 
     <footer>
-      <p>課題作成中</p>
-      <p>© 2018 Instagram Clone</p>
+      <p><%= link_to 'フィードバック', new_contact_path %></p>
+      <p>© 2018 Friencher</p>
     </footer>
 
   </body>

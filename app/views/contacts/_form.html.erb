@@ -11,6 +11,8 @@
       </div>
     <% end %>
 
+    <p>＊改善した方が良い点がございましたらご指摘願います＊</p>
+
     <div class="field">
       <p><%= form.label :name %></p>
       <%= form.text_field :name, id: :contact_name %>
@@ -27,7 +29,7 @@
     </div>
 
     <div class="actions">
-      <p><%= form.submit %></p>
+      <p><%= form.submit "送信" %></p>
     </div>
   <% end %>
 </div>
