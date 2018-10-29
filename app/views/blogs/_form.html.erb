@@ -24,10 +24,10 @@
       </tr>
     </table>
     <div class="center">
-      <%= f.label :image %>
-    </div>
+      <%= f.label :image %><br>
       <!-- 確認画面から新規作成画面に戻った時に、アップロードした画像を表示させるための記述 -->
-      <%= image_tag @blog.image.url, class: 'image center' if @blog.image.url %>
+      <%= image_tag @blog.image.url, class: 'image' if @blog.image.url %>
+      </div>
       <div class="file_field">
         <%= f.file_field :image %>
       </div>

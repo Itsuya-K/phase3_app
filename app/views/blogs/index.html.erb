@@ -1,4 +1,4 @@
-<div class="center"><h2 class="title">タイムライン</h2></div><br>
+<div class="center"><h2 class="title">タイムライン</h2></div>
 <div class="margin">
 <% @blogs.each_with_index do |blog, i| %>
   <% if i % 5 == 0 %>
@@ -18,16 +18,16 @@
       <% else %>
         <%= image_tag 'twitterclone_icon.png', class: "icon" %>
       <% end %>
-      <%= blog.user.name %>
+      <span class="line-break"><%= blog.user.name %></span>
     </p>
     <p class="margin center">
-      <strong><%= blog.title %></strong>
+      <strong class="line-break"><%= blog.title %></strong>
     </p>
     <div class="scr panel-heading">
       <% if blog.image.url %>
         <p class="center"><%= image_tag blog.image.url, class: "blog_image" %></p>
       <% end %>
-      <%= blog.content %>
+      <span class="line-break"><%= blog.content %></span>
     </div>
 
     <div class="bottuns">

@@ -38,13 +38,15 @@ nav a {
   min-hight: 300px;
 }
 
-.under {
-  border-bottom: solid 1px darkgray;
-}
-
 .show_bottuns {
   position: absolute;
   bottom: 0;
+}
+
+.confirm_content {
+  width: 80%;
+  display: block;
+  margin: auto;
 }
 
 .clearfix:after {

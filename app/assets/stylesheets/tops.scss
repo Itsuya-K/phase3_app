@@ -28,11 +28,11 @@
 .top_title:before, .top_title:after{
   content: '';
   position: absolute;
-  top: -7px;
+  top: -20px;
   width: 2px;
-  height: -webkit-calc(100% + 14px);
-  height: calc(100% + 14px);
+  height: -webkit-calc(100% + 40px);
+  height: calc(100% + 40px);
   background-color: black;
 }
-.top_title:before {left: 7px;}
-.top_title:after {right: 7px;}
+.top_title:before {left: 20px;}
+.top_title:after {right: 20px;}

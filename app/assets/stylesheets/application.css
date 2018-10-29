@@ -21,22 +21,33 @@
  }
 
  html {
-   /* position: relative; */
    min-height: 100%;
  }
 
+ header .background {
+   padding:1em;
+   background: url(back02.jpg);
+   background-size: cover;
+ }
+
  header h1 {
+   color: white;
+   text-shadow:
+        gray 1px 1px 0, black -1px -1px 0,/*右下、左上*/
+        gray -1px 1px 0, gray 1px -1px 0,/*右上、左下*/
+        gray 0px 1px 0, gray  0-1px 0,/*右、左*/
+        gray -1px 0 0, gray 1px 0 0;/*上、下*/
    width: 45rem;
    letter-spacing: 0.7em;
    font-size:3rem;
    font-weight:bold;
    position: relative;
-   padding: 0.5em 1em;
-   border-top: solid 2px black;
-   border-bottom: solid 2px black;
+   padding: 0.2em 0.5em;
+   border-top: solid 2px white;
+   border-bottom: solid 2px white;
    margin: auto;
-   margin-top: 0.5em;
-   margin-bottom: 0.5em;
+   /* margin-top: 0.5em; */
+   /* margin-bottom: 0.5em; */
    text-align: center;
  }
  header h1:before, header h1:after {
@@ -46,7 +57,7 @@
    width: 2px;
    height: -webkit-calc(100% + 14px);
    height: calc(100% + 14px);
-   background-color: black;
+   background-color: white;
  }
  header h1:before {left: 7px;}
  header h1:after {right: 7px;}
@@ -62,7 +73,7 @@
     object-fit: cover;
     object-position: 50% 50%;
     border-radius: 50%;
-    margin: 15px;
+    margin: 10px;
     box-shadow: 0 0 5px;
  }
 
@@ -73,6 +84,7 @@
  header nav {
    background-color: lightgray;
    height: 50px;
+   box-shadow: 2px 2px 4px gray;
  }
 
  ul {
@@ -162,6 +174,16 @@ table {
 
 td {
   padding: 10px;
+}
+
+.line-break {
+  word-wrap: break-word;
+  white-space: pre-line;
+}
+
+.under {
+  border-bottom: solid 1px darkgray;
+  font-weight:bold;
 }
 
 .margin {

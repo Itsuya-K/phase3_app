@@ -1,21 +1,19 @@
 <div class="center"><h2 class="title"><%= title %>確認画面</h2></div>
 <div class="show_content">
-  <h3 class="center">以下の内容で、送信する。</h3>
+  <h3 class="center">以下の内容で確定する</h3>
 
   <%= form_with(model: @blog, url: url, local: true) do |f| %>
     <%= f.hidden_field :title %>
     <%= f.hidden_field :content %>
 
-    <table>
-      <tr>
-        <td>タイトル:</td>
-        <td><%= @blog.title %></td>
-      </tr>
-      <tr>
-        <td>本文:</td>
-        <td><%= @blog.content %></td>
-      </tr>
-    </table>
+    <div class="confirm_content">
+        <p class="under">タイトル</p>
+        <p class="line-break"><%= @blog.title %></p>
+
+        <p class="under">本文</p>
+        <p class=" line-break"><%= @blog.content %></p>
+    </div>
+
     <div class="center margin">
       <% if @blog.image.url %>
         <%= image_tag @blog.image.url, class: 'image' %>
