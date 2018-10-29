@@ -1,10 +1,10 @@
-<h2 class="title">Sign up</h2>
+<div class="center"><h2 class="title">Sign up</h2></div>
 
 <div class="show_content">
   <%= form_with(model: @user, local: true) do |f| %>
     <% if @user.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
+        <p><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</p>
         <ul>
         <% @user.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -34,6 +34,6 @@
         <td><%= f.file_field :image %></td>
       </tr>
     </table>
-    <%= f.submit "Create my account" %>
+    <div class="center margin"><%= f.submit "Create my account" %></div>
   <% end %>
 </div>

@@ -27,7 +27,8 @@
 
  header h1 {
    width: 45rem;
-   font-size:6rem;
+   letter-spacing: 0.7em;
+   font-size:3rem;
    font-weight:bold;
    position: relative;
    padding: 0.5em 1em;
@@ -95,7 +96,7 @@ header li {
 footer {
   /* width: 100%; */
   background-color:gray;
-  padding: 20px 0 10px 0;
+  padding: 15px 0 5px 0;
   color: white;
   text-align: center;
   /* margin: auto; */
@@ -103,6 +104,14 @@ footer {
   font-size: 12px;
   /* position: absolute;
   bottom: 0; */
+}
+
+footer span {
+  margin: 0 10px;
+}
+
+footer p {
+  margin-top: 10px;
 }
 
 footer a {
@@ -117,29 +126,38 @@ footer a {
   min-height: 500px;
 }
 
-h3 {
-  background-color: gray;
-  color: white;
-  border: solid 1.5px lightgray;
-  padding: 10px;
-  margin: 10px
-}
+/* コンテント内の大見出し */
+.title {
+  color: #ffffff;
+  background: #000000;
+  border-radius: 0.5em;
+  padding: 12px 25px;
+  border: double 5px lightyellow;
+  display: inline-block;
+ }
 
+/* フォームの囲い */
 .show_content {
-  margin: 50px auto;
-  max-width: 650px;
+  /* margin: 30px 100px; */
+  padding: 30px;
   background-color: white;
-  padding: 20px 0px 50px 150px;
   box-shadow: 0 0 10px  inset;
   border-radius: 5px;
+  max-width: 60%;
+  min-width: 20%;
+  margin: auto;
 }
 
 .show_content p {
-  margin-top: 30px;
+  margin: 30px 0;
+}
+
+form {
+  margin: 0;
 }
 
 table {
-  margin: 20px;
+  margin: auto;
 }
 
 td {
@@ -150,8 +168,17 @@ td {
   margin: 15px 0;
 }
 
+.margin_top {
+  margin-top: 50px;
+}
+
 .center {
   text-align: center;
+}
+
+.file_field {
+  position:absolute;
+  left: 40%;
 }
 
 /* プロフィール中お気に入りの内容部分 */
@@ -160,6 +187,15 @@ td {
   overflow: scroll;
 }
 
+.blog_image {
+  height: 200px;
+  width: 300px;
+  object-fit: cover;
+  object-position: 50% 50%;
+  margin: 10px;
+}
+
+/* エラー表示 */
 #notice {
   color: green;
 }
@@ -191,8 +227,4 @@ td {
     font-size: 12px;
     list-style: square;
   }
-}
-
-label {
-  display: block;
 }

@@ -1,5 +1,9 @@
-<div class="show_content">
-  <%= form_with(model: @contact, local: true) do |form| %>
+
+<%= form_with(model: @contact, local: true) do |f| %>
+
+  <div class="show_content">
+    <p class="center">＊改善した方が良い点がございましたらご指摘願います＊</p>
+
     <% if @contact.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
@@ -11,25 +15,20 @@
       </div>
     <% end %>
 
-    <p>＊改善した方が良い点がございましたらご指摘願います＊</p>
-
-    <div class="field">
-      <p><%= form.label :name %></p>
-      <%= form.text_field :name, id: :contact_name %>
-    </div>
-
-    <div class="field">
-      <p><%= form.label :email %></p>
-      <%= form.text_field :email, id: :contact_email %>
-    </div>
-
-    <div class="field">
-      <p><%= form.label :content %></p>
-      <%= form.text_area :content, id: :contact_content %>
-    </div>
-
-    <div class="actions">
-      <p><%= form.submit "送信" %></p>
-    </div>
-  <% end %>
-</div>
+    <table>
+      <tr>
+        <td><%= f.label :name %></td>
+        <td><%= f.text_field :name, id: :contact_name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :email %></td>
+        <td><%= f.text_field :email, id: :contact_email %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :content %></td>
+        <td><%= f.text_area :content, id: :contact_content %></td>
+      </tr>
+    </table>
+    <div class="center margin"><%= f.submit "送信" %></div>
+  </div>
+<% end %>

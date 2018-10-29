@@ -14,14 +14,6 @@ nav a {
    }
  }
 
-.title {
-  color: #ffffff;
-  background: #000000;
-  border-radius: 0.5em;
-  display: inline-block;
-  padding: 12px 25px;
- }
-
 .blog {
    background-color: white;
    margin: 20px;
@@ -39,11 +31,6 @@ nav a {
   // background-color: black;
 }
 
-.blog .image {
-  // float: left;
-  margin: 10px;
-}
-
 .content {
   // margin-left: 50px;
   // float: left;
@@ -55,9 +42,9 @@ nav a {
   border-bottom: solid 1px darkgray;
 }
 
-// 投稿一覧の内容部分
-.text {
-  min-height: 250px;
+.show_bottuns {
+  position: absolute;
+  bottom: 0;
 }
 
 .clearfix:after {

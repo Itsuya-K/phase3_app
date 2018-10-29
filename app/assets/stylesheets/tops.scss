@@ -14,15 +14,16 @@
 }
 
 .top_title{
-  width: 70rem;
+  width: 10em;
+  letter-spacing: 0.3em;
   font-size:10rem;
   font-weight:bold;
   position: relative;
-  padding: 0.5em 1em;
+  padding: 0.5em 0;
   border-top: solid 2px black;
   border-bottom: solid 2px black;
+  margin: auto;
   text-align: center;
-  margin: 0 auto;
 }
 .top_title:before, .top_title:after{
   content: '';

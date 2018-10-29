@@ -1,33 +1,36 @@
-<h2 class="title"><%= title %></h2>
+<div class="center"><h2 class="title"><%= title %></h2></div>
 
 <div class="show_content">
-<%= form_with(model: @blog, url: choose_new_or_edit, local: true) do |form| %>
-  <% if @blog.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
-      <ul>
-      <% @blog.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= form_with(model: @blog, url: choose_new_or_edit, local: true) do |f| %>
+    <% if @blog.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
+        <ul>
+        <% @blog.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-  <div class="blog_title">
-    <p><%= form.label :image %></p>
-    <!-- 確認画面から新規作成画面に戻った時に、 -->
-    <!-- アップロードした画像を表示させるための記述 -->
-    <%= image_tag @blog.image.url, class: 'image' if @blog.image.url %>
-    <%= form.file_field :image %>
-  </div>
-  <div class="blog_title">
-    <p><%= form.label :title %></p>
-    <%= form.text_field :title %>
-  </div>
-  <div class="blog_title">
-    <p><%= form.label :content %></p>
-    <%= form.text_area :content %>
-  </div>
-  <p><%= form.submit %></p>
-<% end %>
+    <table>
+      <tr>
+        <td><%= f.label :title %></td>
+        <td><%= f.text_field :title %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :content %></td>
+        <td><%= f.text_area :content %></td>
+      </tr>
+    </table>
+    <div class="center">
+      <%= f.label :image %>
+    </div>
+      <!-- 確認画面から新規作成画面に戻った時に、アップロードした画像を表示させるための記述 -->
+      <%= image_tag @blog.image.url, class: 'image center' if @blog.image.url %>
+      <div class="file_field">
+        <%= f.file_field :image %>
+      </div>
+    <div class="center margin_top"><%= f.submit %></div>
+  <% end %>
 </div>

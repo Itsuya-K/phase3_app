@@ -1,4 +1,4 @@
-<h2 class="title">Log in</h2>
+<div class="center"><h2 class="title">Log in</h2></div>
 <div class="show_content">
   <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
   <table>
@@ -11,6 +11,6 @@
       <td><%= f.password_field :password %></td>
     </tr>
   </table>
-    <%= f.submit "Log in" %>
+    <div class="center margin"><%= f.submit "Log in" %></div>
   <% end %>
 </div>
