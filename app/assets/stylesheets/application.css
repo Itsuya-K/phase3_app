@@ -128,40 +128,40 @@ footer p {
   border-bottom: solid 1px #3e3227;
   display: inline-block;
  } */
- .title {
-   position: relative;
-   color: #3e3227;
-   font-size: 20px;
-   padding: 10px 0;
-   text-align: center;
-   margin: 1.5em 0;
- }
- .title:before {
-   content: "";
-   position: absolute;
-   top: -8px;
-   left: 50%;
-   width: 150px;
-   height: 58px;
-   border-radius: 50%;
-   border: 5px solid #b09981;
-   border-left-color: transparent;
-   border-right-color: transparent;
-   -moz-transform: translateX(-50%);
-   -webkit-transform: translateX(-50%);
-   -ms-transform: translateX(-50%);
-   transform: translateX(-50%);
-   }
+.title {
+  position: relative;
+  color: #3e3227;
+  font-size: 20px;
+  padding: 10px 0;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+.title:before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 150px;
+  height: 58px;
+  border-radius: 50%;
+  border: 5px solid #b09981;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
 
-  /* フォームの囲い */
-  .show_content {
-    padding: 30px;
-    background-color: white;
-    box-shadow: 0 0 10px  inset;
-    border-radius: 5px;
-    max-width: 60%;
-    min-width: 20%;
-    margin: 20px auto;
+/* フォームの囲い */
+.show_content {
+  padding: 30px;
+  background-color: white;
+  box-shadow: 0 0 10px  inset;
+  border-radius: 5px;
+  max-width: 60%;
+  min-width: 20%;
+  margin: 20px auto;
 }
 
 .show_content p {

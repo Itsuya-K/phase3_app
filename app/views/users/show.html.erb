@@ -11,41 +11,40 @@
   <p><span class="under">メールアドレス</span><br><%= @user.email %></p>
 </div>
 
-<div class="favorite_blogs">
-  <h3 class="center margin"><b>「いいね」した投稿</b></h3>
-  <% @favorites_blogs.each_with_index do |blog, i| %>
-    <% if i % 5 == 0 %>
-      <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-success">
-    <% elsif i % 5 == 1 %>
-      <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-warning">
-    <% elsif i % 5 == 2 %>
-      <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-info">
-    <% elsif i % 5 == 3 %>
-      <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-danger">
-    <% else %>
-      <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-default">
-    <% end %>
-      <p class="under name">
-        <% if blog.image.url %>
-          <%= image_tag blog.image.url, class: "icon" %>
-        <% else %>
-          <%= image_tag 'twitterclone_icon.png', class: "icon" %>
-        <% end %>
-        <span class="line-break"><%= blog.user.name %></span>
-      </p>
-      <p class="margin center">
-        <sstrong class="line-break"><%= blog.title %></strong>
-      </p>
-      <div class="scr panel-heading">
-        <% if blog.image.url %>
-          <p class="center"><%= image_tag blog.image.url, class: "blog_image" %></p>
-        <% end %>
-        <span class="line-break"><%= blog.content %></span>
-      </div>
 
-      <div class="bottuns">
-        <%= link_to '詳細', blog_path(blog.id), class: 'btn btn-default margin' %>
-      </div>
+<p class="user_title">「いいね」した投稿</p>
+<% @favorites_blogs.each_with_index do |blog, i| %>
+  <% if i % 5 == 0 %>
+    <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-success">
+  <% elsif i % 5 == 1 %>
+    <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-warning">
+  <% elsif i % 5 == 2 %>
+    <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-info">
+  <% elsif i % 5 == 3 %>
+    <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-danger">
+  <% else %>
+    <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-default">
+  <% end %>
+    <p class="under name">
+      <% if blog.image.url %>
+        <%= image_tag blog.image.url, class: "icon" %>
+      <% else %>
+        <%= image_tag 'twitterclone_icon.png', class: "icon" %>
+      <% end %>
+      <span class="line-break"><%= blog.user.name %></span>
+    </p>
+    <p class="margin center">
+      <sstrong class="line-break"><%= blog.title %></strong>
+    </p>
+    <div class="scr panel-heading">
+      <% if blog.image.url %>
+        <p class="center"><%= image_tag blog.image.url, class: "blog_image" %></p>
+      <% end %>
+      <span class="line-break"><%= blog.content %></span>
     </div>
-    <% end %>
-</div>
+
+    <div class="bottuns">
+      <%= link_to '詳細', blog_path(blog.id), class: 'btn btn-default margin' %>
+    </div>
+  </div>
+  <% end %>
