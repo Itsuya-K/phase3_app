@@ -1,52 +1,61 @@
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-nav a {
-   color: #000;
 
-   &:visited {
-     color: #666;
-   }
+nav a {
+   color: #fff;
+
+  // &:visited {
+  //   color: #666;
+  // }
+
+  &:hover {
+   color: #FFFFCC;
+   background-color: #000;
+  }
+}
+
+footer a {
+   color: #fff;
+   font-weight: bold;
 
    &:hover {
-     color: #fff;
-     background-color: #000;
+     color: #FFFFCC;
    }
- }
+}
 
+// blogs/show.html.erb
+// ブログ全体
 .blog {
    background-color: white;
    margin: 20px;
    padding: 20px;
    border-radius: 5px;
    border: solid 1px lightgray;
+   font-size: 1.5rem;
  }
 
-.image {
-  height: 300px;
-  width: 300px;
-  object-fit: cover;
-  object-position: 50% 50%;
-  // object-fit: contain;
-  // background-color: black;
-}
-
+// コンテントの枠
 .content {
-  // margin-left: 50px;
-  // float: left;
-  font-size: 1.5rem;
-  min-hight: 300px;
+  background-color: #d7ccc0;
+  padding: 10px 30px;
+  border-radius: 3px;
 }
 
-.show_bottuns {
-  position: absolute;
-  bottom: 0;
-}
-
+// blogs/_confirmform.html.erb
 .confirm_content {
   width: 80%;
   display: block;
   margin: auto;
+}
+
+.image {
+  max-height: 80%;
+  max-width: 25%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  // object-fit: contain;
+  // background-color: black;
 }
 
 .clearfix:after {

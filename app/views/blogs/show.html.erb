@@ -1,26 +1,20 @@
 <div class="center"><h2 class="title">詳細画面</h2></div>
-<ul class="row blog">
-  <div class="clearfix">
-    <li class="col-md-4">
-      <p>#<%= @blog.id %></p>
-      <% if @blog.image.url %>
-        <%= image_tag @blog.image.url, class: 'image' %>
-      <% else %>
-        <%= image_tag 'twitterclone_icon.png', class: "image" %>
-      <% end %>
-    </li>
-    <li class="content col-md col-md-8 text_left">
-      <p class="under">
-        <% if @blog.user.image.url %>
-          <%= image_tag @blog.user.image.url, class: "icon" %>
-        <% end %>
-        <strong><%= @blog.user.name %></strong>
-      </p>
-      <h4 class="margin"><b><%= @blog.title %></b></h4>
-      <p><%= @blog.content %></p>
-    </li>
+
+<div class="blog">
+  <p class="under">
+    <% if @blog.user.image.url %>
+      <%= image_tag @blog.user.image.url, class: "icon" %>
+    <% end %>
+    <strong><%= @blog.user.name %></strong>
+  </p>
+  <h4 class="margin center"><strong class="margin center line-break"><%= @blog.title %></strong></h4>
+  <div class="content">
+  <% if @blog.image.url %>
+    <div class="center"><%= image_tag @blog.image.url, class: 'image margin' %></div>
+  <% end %>
+  <p class="line-break"><%= @blog.content %></p>
   </div>
-  <div class="center show_buttons">
+  <div class="center margin_top_small">
     <% if logged_in? %>
       <% unless @blog.user_id == current_user.id %>
         <% if @favorite.present? %>
@@ -35,6 +29,6 @@
       <% end %>
     <% end %>
   </div>
-</ul>
+</div>
 
-<p class="bottuns"><%= link_to "タイムライン", blogs_path, class: 'btn btn-default' %></p>
+<div class="center"><%= link_to "タイムライン", blogs_path, class: 'btn btn-default' %></div>

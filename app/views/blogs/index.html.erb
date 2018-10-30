@@ -13,8 +13,8 @@
     <div class="col-xs-12 col-sm-offset-1 col-sm-5 panel panel-default">
   <% end %>
     <p class="under name">
-      <% if blog.image.url %>
-        <%= image_tag blog.image.url, class: "icon" %>
+      <% if blog.user.image.url %>
+        <%= image_tag blog.user.image.url, class: "icon" %>
       <% else %>
         <%= image_tag 'twitterclone_icon.png', class: "icon" %>
       <% end %>

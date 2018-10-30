@@ -14,80 +14,62 @@
  *= require_tree .
  *= require_self
  */
- html {
-   height: 100%;
- }
 
- body{
-   font-family: 'Hiragino Maru Gothic Pro';
-   background: lightyellow;
-   height: 100%;
- }
+html {
+  height: 100%;
+}
 
- .container_entire {
-   min-height: 100%;
-    position: relative;
- }
+/* 表示領域全体 */
+body{
+  font-family: 'Hiragino Maru Gothic Pro';
+  background: lightyellow;
+  height: 100%;
+}
 
- header .background {
-   padding:1em;
-   background: url(back02.jpg);
-   background-size: cover;
- }
+.container_entire {
+  min-height: 100%;
+  position: relative;
+}
 
- header h1 {
-   color: white;
-   text-shadow:
-        gray 1px 1px 0, black -1px -1px 0,/*右下、左上*/
-        gray -1px 1px 0, gray 1px -1px 0,/*右上、左下*/
-        gray 0px 1px 0, gray  0-1px 0,/*右、左*/
-        gray -1px 0 0, gray 1px 0 0;/*上、下*/
-   width: 45rem;
-   letter-spacing: 0.7em;
-   font-size:3rem;
-   font-weight:bold;
-   position: relative;
-   padding: 0.2em 0.5em;
-   border-top: solid 2px white;
-   border-bottom: solid 2px white;
-   margin: auto;
-   /* margin-top: 0.5em; */
-   /* margin-bottom: 0.5em; */
-   text-align: center;
- }
- header h1:before, header h1:after {
-   content: '';
-   position: absolute;
-   top: -7px;
-   width: 2px;
-   height: -webkit-calc(100% + 14px);
-   height: calc(100% + 14px);
-   background-color: white;
- }
- header h1:before {left: 7px;}
- header h1:after {right: 7px;}
+/* ヘッダー */
+header .background {
+  padding:1em;
+  background: url(back02.jpg);
+  background-size: cover;
+}
 
- .name {
-   font-size: 1.8rem;
-   margin: 10px;
- }
-
- .icon {
-    height: 50px;
-    width: 50px;
-    object-fit: cover;
-    object-position: 50% 50%;
-    border-radius: 50%;
-    margin: 10px;
-    box-shadow: 0 0 5px;
- }
-
- .bottuns {
-   text-align: center;
- }
+header h1 {
+  color: white;
+  text-shadow:
+    gray 1px 1px 0, black -1px -1px 0,/*右下、左上*/
+    gray -1px 1px 0, gray 1px -1px 0,/*右上、左下*/
+    gray 0px 1px 0, gray  0-1px 0,/*右、左*/
+    gray -1px 0 0, gray 1px 0 0;/*上、下*/
+  width: 45rem;
+  letter-spacing: 0.7em;
+  font-size:3rem;
+  font-weight:bold;
+  position: relative;
+  padding: 0.2em 0.5em;
+  border-top: solid 2px white;
+  border-bottom: solid 2px white;
+  margin: auto;
+  text-align: center;
+}
+header h1:before, header h1:after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  width: 2px;
+  height: -webkit-calc(100% + 14px);
+  height: calc(100% + 14px);
+  background-color: white;
+}
+  header h1:before {left: 7px;}
+  header h1:after {right: 7px;}
 
  header nav {
-   background-color: lightgray;
+   background-color: #333333;
    height: 50px;
    box-shadow: 2px 2px 4px gray;
  }
@@ -110,16 +92,16 @@ header li {
   float: left;
 }
 
+/* フッター */
 footer {
   width: 100%;
-  background-color:gray;
+  background-color: #1f1613;
   padding: 15px 0 5px 0;
   color: white;
   text-align: center;
   font-size: 12px;
   position: absolute;
   bottom: 0;
-
 }
 
 footer span {
@@ -130,11 +112,8 @@ footer p {
   margin-top: 10px;
 }
 
-footer a {
-  color: white;
-  font-weight: bold;
-}
-
+/* ↓その他 */
+/* ヘッダーとフッターの間 */
 .container {
   margin: 0 auto;
   margin-top: 10px;
@@ -142,24 +121,47 @@ footer a {
 }
 
 /* コンテント内の大見出し */
-.title {
-  color: #ffffff;
-  background: #000000;
+/* .title {
+  color: #3e3227;
   border-radius: 0.5em;
-  padding: 12px 25px;
-  border: double 5px lightyellow;
+  padding: 10px 15px;
+  border-bottom: solid 1px #3e3227;
   display: inline-block;
+ } */
+ .title {
+   position: relative;
+   color: #3e3227;
+   font-size: 20px;
+   padding: 10px 0;
+   text-align: center;
+   margin: 1.5em 0;
  }
+ .title:before {
+   content: "";
+   position: absolute;
+   top: -8px;
+   left: 50%;
+   width: 150px;
+   height: 58px;
+   border-radius: 50%;
+   border: 5px solid #b09981;
+   border-left-color: transparent;
+   border-right-color: transparent;
+   -moz-transform: translateX(-50%);
+   -webkit-transform: translateX(-50%);
+   -ms-transform: translateX(-50%);
+   transform: translateX(-50%);
+   }
 
-/* フォームの囲い */
-.show_content {
-  padding: 30px;
-  background-color: white;
-  box-shadow: 0 0 10px  inset;
-  border-radius: 5px;
-  max-width: 60%;
-  min-width: 20%;
-  margin: 20px auto;
+  /* フォームの囲い */
+  .show_content {
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 0 10px  inset;
+    border-radius: 5px;
+    max-width: 60%;
+    min-width: 20%;
+    margin: 20px auto;
 }
 
 .show_content p {
@@ -176,6 +178,25 @@ table {
 
 td {
   padding: 10px;
+}
+
+.name {
+  font-size: 1.8rem;
+  margin: 10px;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 50%;
+  margin: 10px;
+  box-shadow: 0 0 5px;
+}
+
+.bottuns {
+  text-align: center;
 }
 
 .line-break {
@@ -196,6 +217,10 @@ td {
   margin-top: 50px;
 }
 
+.margin_top_small {
+  margin-top: 15px;
+}
+
 .center {
   text-align: center;
 }
@@ -207,21 +232,28 @@ td {
 
 /* プロフィール中お気に入りの内容部分 */
 .scr {
-  max-height: 300px;
+  max-height: 450px;
   overflow: scroll;
 }
 
 .blog_image {
-  height: 200px;
-  width: 300px;
+  height: 250px;
+  width: 90%;
   object-fit: cover;
   object-position: 50% 50%;
   margin: 10px;
 }
 
 /* エラー表示 */
-#notice {
+.notice {
   color: green;
+  text-align: center;
+  display: block;
+}
+
+.danger {
+  color: green;
+  text-align: center;
 }
 
 .field_with_errors {
